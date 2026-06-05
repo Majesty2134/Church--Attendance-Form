@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@400;500&display=swap');
+
+/* Setup custom CSS variables for design system tokens used in original code */
+:root {
+  --border-radius-lg: 12px;
+  --border-radius-md: 6px;
+  --color-background-primary: #ffffff;
+  --color-border-tertiary: #e2e8f0;
+  --color-border-secondary: #cbd5e1;
+  --color-text-secondary: #64748b;
+}
+
+.att-wrap { 
+  font-family: 'DM Sans', sans-serif; 
+  max-width: 480px; 
+  margin: 2rem auto; 
+}
+
+.att-header { 
+  background: #1e2d5a; 
+  padding: 2rem; 
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; 
+  text-align: center; 
+}
+
+.att-header h1 { 
+  font-family: 'Playfair Display', serif; 
+  color: #dce8ff; 
+  font-size: 22px; 
+  font-weight: 600; 
+  margin: 0 0 4px; 
+}
+
+.att-header p { 
+  color: #7a9bd4; 
+  font-size: 13px; 
+  margin: 0; 
+}
+
+.sunday-badge { 
+  display: block; 
+  align-items: center; 
+  gap: 6px; 
+  background: #2d4080; 
+  color: #a8c0f0; 
+  font-size: 12px; 
+  font-weight: 500; 
+  padding: 6px 14px; 
+  border-radius: 20px; 
+  margin-bottom: 12px; 
+}
+
+.att-body { 
+  background: var(--color-background-primary); 
+  border: 0.5px solid var(--color-border-tertiary); 
+  border-top: none; 
+  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg); 
+  padding: 1.75rem 2rem 2rem; 
+}
+
+.form-group { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 5px; 
+  margin-bottom: 14px; 
+}
+
+label { 
+  font-size: 12px; 
+  font-weight: 500; 
+  color: var(--color-text-secondary); 
+}
+
+input, select { 
+  font-family: 'DM Sans', sans-serif; 
+  font-size: 14px; 
+  padding: 10px; /* added standard fallback padding for look consistency */
+  border: 1px solid var(--color-border-secondary);
+  border-radius: var(--border-radius-md); 
+}
+
+.service-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+  margin-bottom: 14px; 
+}
+
+.service-card { 
+  border: 0.5px solid var(--color-border-tertiary); 
+  border-radius: var(--border-radius-md); 
+  padding: 12px 14px; 
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  transition: border-color 0.15s; 
+}
+
+.service-card:hover { 
+  border-color: var(--color-border-secondary); 
+}
+
+.service-card.selected { 
+  border-color: #3358c4; 
+  background: #f0f4ff; 
+}
+
+.service-card.selected .sc-label { 
+  color: #1e2d5a; 
+}
+
+.sc-dot { 
+  width: 16px; 
+  height: 16px; 
+  border-radius: 50%; 
+  border: 1.5px solid var(--color-border-secondary); 
+  flex-shrink: 0; 
+}
+
+.service-card.selected .sc-dot { 
+  background: #3358c4; 
+  border-color: #3358c4; 
+}
+
+.sc-label { 
+  font-size: 13px; 
+  font-weight: 500; 
+  color: var(--color-text-secondary); 
+}
+
+.sc-time { 
+  font-size: 11px; 
+  color: var(--color-text-secondary); 
+  margin-top: 1px; 
+}
+
+.submit-btn { 
+  width: 100%; 
+  margin-top: 0.5rem; 
+  background: #1e2d5a; 
+  color: #dce8ff; 
+  border: none; 
+  border-radius: var(--border-radius-md); 
+  padding: 13px; 
+  font-family: 'DM Sans', sans-serif; 
+  font-size: 14px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 8px; 
+}
+
+.submit-btn:hover { 
+  background: #2d4080; 
+}
+
+.church-logo {
+  width: 200px; 
+  height: 40px; 
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.section-label { 
+  font-size: 11px; 
+  font-weight: 500; 
+  letter-spacing: 0.08em; 
+  text-transform: uppercase; 
+  color: #3358c4; 
+  margin: 0 0 0.75rem; 
+}
+
+.divider { 
+  border: none; 
+  border-top: 0.5px solid var(--color-border-tertiary); 
+  margin: 1.25rem 0; 
+}
+
+.socials a{
+  text-decoration: none;
+  color: #050505;
+  display:  block;
+  font-weight: 500;
+}
+footer {
+  background: var(--white);
+  padding: 20px 30px;
+  text-align: center;
+  color: var(--text);
+}
+
+.footer-location{
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .form-grid { 
+    grid-template-columns: 1fr; 
+  }
+}

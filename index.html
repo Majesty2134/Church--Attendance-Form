@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Church Attendance Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="att-wrap">
+  <div class="att-header">
+    <div class="sunday-badge">
+      <img src="image/oew_logo (2).png" alt="Church Logo" class="church-logo"><br><br>
+       <i class="ti ti-calendar-event" aria-hidden="true" style="font-size:14px;"></i> 
+      <span>Service Attendance</span>
+    </div>
+    <h1>Mark your attendance</h1>
+    <p id="today-display">Loading date...</p>
+  </div>
+
+  <div class="att-body">
+    <div class="section-label">Your details</div>
+    <div class="form-group">
+      <label for="worker-name">Full name</label>
+      <input type="text" id="worker-name" placeholder="Enter your full name">
+    </div>
+    <div class="form-group">
+      <label for="worker-dept">Department</label>
+      <select id="worker-dept">
+        <option value="" disabled selected>Select your department</option>
+        <option>Choir</option>
+        <option>Ushering</option>
+        <option>Media & Sound</option>
+        <option>Children's Ministry</option>
+        <option>Protocol</option>
+        <option>Prayer Team</option>
+        <option>Men's Fellowship</option>
+        <option>Women's Fellowship</option>
+        <option>Youth</option>
+        <option>Ministers</option>
+      </select>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Select service</div>
+    <div class="service-grid">
+
+      <div class="service-card" onclick="selectService(this)">
+        <div class="sc-dot"></div>
+        <div>
+          <div class="sc-label">Workers Meeting</div>
+          <div class="sc-time">7:00 AM – 7:45 AM</div>
+        </div>
+      </div>
+
+      <div class="service-card" onclick="selectService(this)">
+        <div class="sc-dot"></div>
+        <div>
+          <div class="sc-label">Sunday School</div>
+          <div class="sc-time">7:50 AM – 8:40 AM</div>
+        </div>
+      </div>
+      <div class="service-card" onclick="selectService(this)">
+        <div class="sc-dot"></div>
+        <div>
+          <div class="sc-label">Sunday Service</div>
+          <div class="sc-time">8:40AM – 10:00 AM</div>
+        </div>
+      </div>
+      <div class="service-card" onclick="selectService(this)">
+        <div class="sc-dot"></div>
+        <div>
+          <div class="sc-label">Online</div>
+          <div class="sc-time">Livestream</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+    <div class="form-group">
+      <label for="worker-note">Remarks (optional)</label>
+      <input type="text" id="worker-note" placeholder="e.g. Came in late, served at welcome desk">
+    </div>
+
+    <button class="submit-btn" onclick="submitAttendance()">
+      <i class="ti ti-circle-check" aria-hidden="true"></i>
+      Submit attendance
+    </button>
+      <footer>
+                <i class="ti ti-map-pin"></i>
+                <span class="footer-location">136/138 Council Ikotun Road ,by Freedom Gate Bus Stop, Subol, Ikotun, Lagos,  Nigeria</span>
+                <div class="socials"> 
+                <h4>follow us on :</h4>
+                <SPAN> <i class="fab fa-instagram"></i></SPAN><SPAN> <a href="https://www.instagram.com/rccg_oew/" target="_blank">RCCG_OEW </SPAN>
+                <SPAN><i class="fab fa-facebook"></i></SPAN><SPAN> <a href="https://www.facebook.com/rccgoneagleswings/#" target="_blank">RCCG ON EAGLES WINGS</a></SPAN>
+                  </div>
+              </footer>
+  </div>
+          
+</div>
+<script src="script.js"></script>
+</body>
+</html>
