@@ -65,16 +65,51 @@
   margin-bottom: 14px; 
 }
 
+.dept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.dept-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-md);
+  padding: 8px 10px;
+  cursor: pointer;
+  position: relative;  /* ← add this */
+  z-index: 1;          /* ← add this */
+}
+
+.dept-option input[type="checkbox"] {
+  accent-color: #3358c4;
+  width: 15px;
+  height: 15px;
+  border: none;
+  padding: 0;
+}
+
+.dept-option:has(input:checked) {
+  border-color: #3358c4;
+  background: #f0f4ff;
+  color: #1e2d5a;
+}
+
 label { 
   font-size: 12px; 
   font-weight: 500; 
   color: var(--color-text-secondary); 
 }
 
-input, select { 
+input:not([type="checkbox"]), select { 
   font-family: 'DM Sans', sans-serif; 
   font-size: 14px; 
-  padding: 10px; /* added standard fallback padding for look consistency */
+  padding: 10px;
   border: 1px solid var(--color-border-secondary);
   border-radius: var(--border-radius-md); 
 }
@@ -84,6 +119,8 @@ input, select {
   grid-template-columns: 1fr 1fr; 
   gap: 10px; 
   margin-bottom: 14px; 
+  position: relative;  /* ← add this */
+  z-index: 2; 
 }
 
 .service-card { 
@@ -110,6 +147,9 @@ input, select {
   color: #1e2d5a; 
 }
 
+input[type="time"] {
+  color: #0f172a; /* prevents greyed-out look on Safari */
+}
 .sc-dot { 
   width: 16px; 
   height: 16px; 
@@ -194,6 +234,100 @@ footer {
 
 .footer-location{
   font-size: 14px;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 16px;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Modal box */
+.modal-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 32px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.modal-overlay.show .modal-box {
+  transform: translateY(0);
+}
+
+/* Checkmark icon */
+.modal-icon {
+  width: 64px;
+  height: 64px;
+  background: #e8f5ee;
+  color: #2e7d4f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.modal-message {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.modal-btn {
+  background: #2e7d4f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 40px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-btn:hover {
+  background: #245f3d;
+}
+
+.form-error {
+  background: #fff0f0;
+  color: #c0392b;
+  border: 1px solid #f5c6c6;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 @media (max-width: 600px) {

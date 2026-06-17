@@ -15,6 +15,7 @@
     <div class="sunday-badge">
       <img src="image/oew_logo (2).png" alt="Church Logo" class="church-logo"><br><br>
        <i class="ti ti-calendar-event" aria-hidden="true" style="font-size:14px;"></i> 
+       <h1>WORKERS</h1>
       <span>Service Attendance</span>
     </div>
     <h1>Mark your attendance</h1>
@@ -24,59 +25,64 @@
   <div class="att-body">
     <div class="section-label">Your details</div>
     <div class="form-group">
+       
+  <label for="worker-arrival">Arrival time</label>
+  <input type="time" id="worker-arrival">
+ 
       <label for="worker-name">Full name</label>
       <input type="text" id="worker-name" placeholder="Enter your full name">
     </div>
-    <div class="form-group">
-      <label for="worker-dept">Department</label>
-      <select id="worker-dept">
-        <option value="" disabled selected>Select your department</option>
-        <option>Choir</option>
-        <option>Ushering</option>
-        <option>Media & Sound</option>
-        <option>Children's Ministry</option>
-        <option>Protocol</option>
-        <option>Prayer Team</option>
-        <option>Men's Fellowship</option>
-        <option>Women's Fellowship</option>
-        <option>Youth</option>
-        <option>Ministers</option>
-      </select>
-    </div>
+   <div class="form-group">
+  <label>Department</label>
+  <div class="dept-grid">
+    <label class="dept-option"><input type="checkbox" value="Choir"> Choir</label>
+    <label class="dept-option"><input type="checkbox" value="Ushering"> Ushering</label>
+    <label class="dept-option"><input type="checkbox" value="Media & Sound"> Media & Sound</label>
+    <label class="dept-option"><input type="checkbox" value="Children's Ministry"> Children's Ministry</label>
+    <label class="dept-option"><input type="checkbox" value="Protocol"> Protocol</label>
+    <label class="dept-option"><input type="checkbox" value="Prayer Team"> Prayer Team</label>
+    <label class="dept-option"><input type="checkbox" value="Men's Fellowship"> Men's Fellowship</label>
+    <label class="dept-option"><input type="checkbox" value="Women's Fellowship"> Women's Fellowship</label>
+    <label class="dept-option"><input type="checkbox" value="Youth"> Youth</label>
+    <label class="dept-option"><input type="checkbox" value="Ministers"> Ministers</label>
+  </div>
+</div>
 
     <hr class="divider">
     <div class="section-label">Select service</div>
     <div class="service-grid">
 
-      <div class="service-card" onclick="selectService(this)">
-        <div class="sc-dot"></div>
-        <div>
-          <div class="sc-label">Workers Meeting</div>
-          <div class="sc-time">7:00 AM – 7:45 AM</div>
-        </div>
-      </div>
+     <div class="service-card">
+  <div class="sc-dot"></div>
+  <div>
+    <div class="sc-label">Workers Meeting</div>
+    <div class="sc-time">7:00 AM – 7:45 AM</div>
+  </div>
+</div>
 
-      <div class="service-card" onclick="selectService(this)">
-        <div class="sc-dot"></div>
-        <div>
-          <div class="sc-label">Sunday School</div>
-          <div class="sc-time">7:50 AM – 8:40 AM</div>
-        </div>
-      </div>
-      <div class="service-card" onclick="selectService(this)">
-        <div class="sc-dot"></div>
-        <div>
-          <div class="sc-label">Sunday Service</div>
-          <div class="sc-time">8:40AM – 10:00 AM</div>
-        </div>
-      </div>
-      <div class="service-card" onclick="selectService(this)">
-        <div class="sc-dot"></div>
-        <div>
-          <div class="sc-label">Online</div>
-          <div class="sc-time">Livestream</div>
-        </div>
-      </div>
+<div class="service-card">
+  <div class="sc-dot"></div>
+  <div>
+    <div class="sc-label">Sunday School</div>
+    <div class="sc-time">7:50 AM – 8:40 AM</div>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="sc-dot"></div>
+  <div>
+    <div class="sc-label">Sunday Service</div>
+    <div class="sc-time">8:40AM – 10:00 AM</div>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="sc-dot"></div>
+  <div>
+    <div class="sc-label">Online</div>
+    <div class="sc-time">Livestream</div>
+  </div>
+</div>
     </div>
 
     <hr class="divider">
@@ -85,7 +91,17 @@
       <input type="text" id="worker-note" placeholder="e.g. Came in late, served at welcome desk">
     </div>
 
-    <button class="submit-btn" onclick="submitAttendance()">
+    <!-- Success Modal -->
+<div id="success-modal" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-icon">✓</div>
+    <h2 class="modal-title">Submitted!</h2>
+    <p class="modal-message" id="modal-message">Your details have been recorded successfully.</p>
+    <button class="modal-btn" id="modal-close">Done</button>
+  </div>
+</div>
+  <div id="form-error" class="form-error" style="display:none;"></div>
+    <button class="submit-btn">
       <i class="ti ti-circle-check" aria-hidden="true"></i>
       Submit attendance
     </button>
@@ -101,6 +117,6 @@
   </div>
           
 </div>
-<script src="script.js"></script>
+<script type="module" src="attendance.js"></script>
 </body>
 </html>
