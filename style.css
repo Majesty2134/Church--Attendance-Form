@@ -329,9 +329,21 @@ footer {
   margin-bottom: 12px;
   text-align: center;
 }
+.brand-name,.EST{
+  color: rgb(22, 21, 21);
+  font-size: 0.5em;
+   position: relative;
+  top: 20px;
+  left: 35%;
+  }
 
 @media (max-width: 600px) {
   .form-grid { 
     grid-template-columns: 1fr; 
+  }
+   .brand-name,.EST{
+    font-size: 1em; 
+    position: relative;
+    left: 30%;
   }
 }
