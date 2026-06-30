@@ -1,0 +1,20 @@
+{
+  "name": "RCCG On Eagles Wings - Attendance",
+  "short_name": "OEW Attendance",
+  "start_url": "/attendance.html",
+  "display": "standalone",
+  "background_color": "#1e2d5a",
+  "theme_color": "#1e2d5a",
+  "icons": [
+    {
+      "src": "image/rccg_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "image/rccg_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e2d5a">
+
+<!-- iOS-specific support -->
+<link rel="apple-touch-icon" href="image/rccg_192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="OEW Attendance">
 </head>
 <body>
 
@@ -22,13 +30,15 @@
     <p id="today-display">Loading date...</p>
   </div>
 
+  <div id="location-status" class="location-status checking">
+  <i class="ti ti-map-pin"></i>
+  <span id="location-status-text">Checking your location...</span>
+</div>
+
   <div class="att-body">
     <div class="section-label">Your details</div>
     <div class="form-group">
-       
-  <label for="worker-arrival">Arrival time</label>
-  <input type="time" id="worker-arrival">
- 
+   
       <label for="worker-name">Full name</label>
       <input type="text" id="worker-name" placeholder="Enter your full name">
     </div>
@@ -95,16 +105,16 @@
 <div id="success-modal" class="modal-overlay">
   <div class="modal-box">
     <div class="modal-icon">✓</div>
-    <h2 class="modal-title">Submitted!</h2>
-    <p class="modal-message" id="modal-message">Your details have been recorded successfully.</p>
+   <h2 class="modal-title">Clocked In!</h2>
+    <p class="modal-message" id="modal-message">Your attendance has been recorded successfully.</p>
     <button class="modal-btn" id="modal-close">Done</button>
   </div>
 </div>
   <div id="form-error" class="form-error" style="display:none;"></div>
-    <button class="submit-btn">
-      <i class="ti ti-circle-check" aria-hidden="true"></i>
-      Submit attendance
-    </button>
+   <button class="submit-btn" id="clockInBtn" disabled>
+  <i class="ti ti-circle-check" aria-hidden="true"></i>
+  <span id="clockInBtnText">Checking location...</span>
+</button>
       <footer>
                 <i class="ti ti-map-pin"></i>
                 <span class="footer-location">136/138 Council Ikotun Road ,by Freedom Gate Bus Stop, Subol, Ikotun, Lagos,  Nigeria</span>
